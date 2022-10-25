@@ -5,7 +5,7 @@ int TRIG = 10;			// trigger en pin 10
 int ECO = 9;			// echo en pin 9
 int LED = 3;			// LED en pin 3
 int DURACION;
-int DISTANCIA;
+int DISTANCIA;    // hola jorge es julio xdxd
 int VERDE = 4;
 int NARANJA = 5;
 int ROJO= 6;
