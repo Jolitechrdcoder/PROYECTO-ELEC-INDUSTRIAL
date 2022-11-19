@@ -35,6 +35,7 @@ void setup() {
   pinMode(2, OUTPUT);
 
   attachInterrupt(digitalPinToInterrupt(3), IR_detected, RISING);
+}
 
   boolean solenoid_on = false;
 
