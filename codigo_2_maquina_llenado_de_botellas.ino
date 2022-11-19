@@ -9,6 +9,7 @@ int estado = 0;
 int estado2 = 0;
 int bomba =4;
 int sellado=13;
+int cont = 0;
 void setup()
 {
 
@@ -27,12 +28,13 @@ void loop()
   estado2= digitalRead(sensor2);//LECTURA SENSOR 2
   
   if(estado == 0){//ESTADO CUANDO LLEGA BOTELLA = 0 LOGICO EN EL SENSOR
-  
+  cont++;
+   Serial.println(cont);
   digitalWrite(rele,1);//DETENGO MOTOR CINTA
     digitalWrite(bomba,1);//enciendo bomba
     Serial.println("!!LLENANDO!!");
     delay(30000);//tiempo de llenado
-  
+   
   }
   else{
     
@@ -44,7 +46,7 @@ void loop()
     if(estado2 == 0){
       digitalWrite(sellado,1);
       Serial.println("!!SELLANDO!!");
-      delay(10000);//tiempo de llenado
+      delay(10000);//tiempo de sellado
       
       }
       else{
