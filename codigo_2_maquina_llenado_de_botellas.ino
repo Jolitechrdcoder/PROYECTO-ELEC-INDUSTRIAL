@@ -7,14 +7,18 @@ int sensor2 = 5;
 int rele = 3;//rele que enciende cinta 
 int estado = 0;
 int estado2 = 0;
-int bomba =4                  ;
+int bomba =4;
+int sellado=13;
 void setup()
 {
+
+  Serial.begin(9600);
    lcd.init();
   lcd.backlight();    
   pinMode(sensor1,INPUT);
   pinMode(rele,OUTPUT);
   pinMode(bomba,OUTPUT);
+  pinMode(sellado,OUTPUT);
 }
 
 void loop()
@@ -26,8 +30,8 @@ void loop()
   
   digitalWrite(rele,1);//DETENGO MOTOR CINTA
     digitalWrite(bomba,1);//enciendo bomba
-    
-    delay(60000);//tiempo de llenado
+    Serial.println("!!LLENANDO!!");
+    delay(30000);//tiempo de llenado
   
   }
   else{
@@ -36,5 +40,16 @@ void loop()
     digitalWrite(bomba,0);
     
     }
- 
+
+    if(estado2 == 0){
+      digitalWrite(sellado,1);
+      Serial.println("!!SELLANDO!!");
+      delay(10000);//tiempo de llenado
+      
+      }
+      else{
+        
+        digitalWrite(sellado,0);
+        }
+ 
 }
