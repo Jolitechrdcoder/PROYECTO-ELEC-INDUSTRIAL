@@ -128,13 +128,13 @@ void loop(){
    lcd.setCursor(10,0);
       lcd.print(" ");
   
-  // condicion tinaco para que encienda ELECTROVALVULA
+  // condicion tanque lleno
   if (DISTANCIA <= 40 && DISTANCIA >= 0){	// si distancia entre 0 y 20 cms.
     digitalWrite(LED, 0);	
     digitalWrite(VERDE,1);
      lcd.setCursor(0,1);
      lcd.print("!!LLENO!!");
-     Serial.println("TINACO LLENO");
+     Serial.println("TANQUE LLENO");
     }
   else{
     digitalWrite(VERDE,0);
@@ -144,7 +144,7 @@ void loop(){
     
     
   }
-  //condicion tinaco mitad
+  //condicion tanque mitad
   
   if(DISTANCIA<=60 && DISTANCIA >=40 ){
   
@@ -152,7 +152,7 @@ void loop(){
    digitalWrite(NARANJA,1);
   lcd.setCursor(0,1);
      lcd.print("!!MEDIO!!");
-    Serial.println("TINACO MEDIO");
+    Serial.println("TANQUE MEDIO");
   
   }
   else{
@@ -160,13 +160,13 @@ void loop(){
     
     
   }
-  //condicion tinaco vacio
+  //condicion tanque vacio
   if(DISTANCIA<=120 &&  DISTANCIA >=60){
    
   digitalWrite(ROJO,1);
   lcd.setCursor(0,1);
      lcd.print("!!BAJO!!");
-    Serial.println("TINACO BAJO");
+    Serial.println("TANQUE BAJO");
   
   }
   else{
